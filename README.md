@@ -27,7 +27,7 @@
 | region_id       | integer    | null: false                    |
 | delivery_days_id| integer    | null: false                    |
 | price           | integer    | null: false                    |
-| seller          | references | null: false, foreign_key: true |
+| user            | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
@@ -38,7 +38,7 @@
 | Column    | Type       | Options                        |
 | --------- |------------|------------------------------- |
 | item      | references | null: false, foreign_key: true |
-| buyer     | references | null: false, foreign_key: true |
+| user      | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
@@ -58,4 +58,4 @@
 | phone    | string     | null: false                    |
 
 ### Association
-- belongs_to :record
+- belongs_to :order
