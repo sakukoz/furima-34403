@@ -41,7 +41,7 @@ RSpec.describe Item, type: :model do
       it 'category_idが1では保存できないこと' do
         @item.category_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Category must be other than 1")
+        expect(@item.errors.full_messages).to include('Category must be other than 1')
       end
       it 'condition_idが空では保存できないこと' do
         @item.condition_id = ''
@@ -51,7 +51,7 @@ RSpec.describe Item, type: :model do
       it 'condition_idが1では保存できないこと' do
         @item.condition_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Condition must be other than 1")
+        expect(@item.errors.full_messages).to include('Condition must be other than 1')
       end
       it 'delivery_fee_idが空では保存できないこと' do
         @item.delivery_fee_id = ''
@@ -61,7 +61,7 @@ RSpec.describe Item, type: :model do
       it 'delivery_fee_idが1では保存できないこと' do
         @item.delivery_fee_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Delivery fee must be other than 1")
+        expect(@item.errors.full_messages).to include('Delivery fee must be other than 1')
       end
       it 'region_idが空では保存できないこと' do
         @item.region_id = ''
@@ -71,7 +71,7 @@ RSpec.describe Item, type: :model do
       it 'region_idが1では保存できないこと' do
         @item.region_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Region must be other than 1")
+        expect(@item.errors.full_messages).to include('Region must be other than 1')
       end
       it 'delivery_days_idが空では保存できないこと' do
         @item.delivery_days_id = ''
@@ -81,7 +81,7 @@ RSpec.describe Item, type: :model do
       it 'delivery_days_idが1では保存できないこと' do
         @item.delivery_days_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Delivery days must be other than 1")
+        expect(@item.errors.full_messages).to include('Delivery days must be other than 1')
       end
       it 'priceが空では保存できないこと' do
         @item.price = ''
@@ -94,7 +94,7 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include('Price must be greater than or equal to 300')
       end
       it 'priceが10000000以上では保存できないこと' do
-        @item.price = 2000000000
+        @item.price = 2_000_000_000
         @item.valid?
         expect(@item.errors.full_messages).to include('Price must be less than or equal to 9999999')
       end
