@@ -56,6 +56,11 @@ RSpec.describe OrderAddress, type: :model do
       @order_address.valid?
       expect(@order_address.errors.full_messages).to include("Phone is the wrong length (should be 11 characters)")
     end
+    it 'phoneは英数混合では保存できないなこと' do
+      @order_address.phone = '234AAAAAAAA'
+      @order_address.valid?
+      expect(@order_address.errors.full_messages).to include("Phone is not a number")
+    end
     it "tokenが空では登録できないこと" do
       @order_address.token = ''
       @order_address.valid?
